@@ -1,6 +1,7 @@
 {
   "name": "spectraui",
   "private": false,
+  "type": "module",
   "version": "0.0.0",
   "files": [
     "./components/**/*"
