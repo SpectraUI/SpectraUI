@@ -1,8 +1,8 @@
-import { Button } from "../components";
+import { Button, Checkbox, UIWraper } from "../components";
 
 function App() {
   return (
-    <div className="bg-black">
+    <UIWraper>
       <Button>Click</Button>
       <Button color="cyan">Cyan</Button>
       <Button color="yellow">Yellow</Button>
@@ -92,7 +92,9 @@ function App() {
       <Button color="red" disabled>
         Red
       </Button>
-    </div>
+      <Checkbox checked />
+      <Checkbox />
+    </UIWraper>
   );
 }
 
