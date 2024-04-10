@@ -1,14 +1,14 @@
 import { ButtonHTMLAttributes, FunctionComponent } from "react";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?:
-  | "primary"
-  | "secondary"
-  | "green"
-  | "red"
-  | "yellow"
-  | "zinc"
-  | "cyan";
+    | "primary"
+    | "secondary"
+    | "green"
+    | "red"
+    | "yellow"
+    | "zinc"
+    | "cyan";
   variant?: "outline" | "solid" | "flat" | "shadow";
   size?: "lg" | "xl" | "sm" | "xs";
   animated?: boolean;
@@ -91,40 +91,39 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
   let scale;
   if (disabled) {
     switch (size) {
-      case 'xl':
-        scale = 'scale-150 opacity-70';
+      case "xl":
+        scale = "scale-150 opacity-70";
         break;
-      case 'lg':
-        scale = 'scale-125 opacity-70';
+      case "lg":
+        scale = "scale-125 opacity-70";
         break;
-      case 'sm':
-        scale = 'scale-95 opacity-70';
+      case "sm":
+        scale = "scale-95 opacity-70";
         break;
-      case 'xs':
-        scale = 'scale-75 opacity-70';
+      case "xs":
+        scale = "scale-75 opacity-70";
         break;
       default:
-        scale = 'scale-95 opacity-70';
+        scale = "scale-95 opacity-70";
     }
   } else {
     switch (size) {
-      case 'xl':
-        scale = 'scale-150 active:scale-[145%]';
+      case "xl":
+        scale = "scale-150 active:scale-[145%]";
         break;
-      case 'lg':
-        scale = 'scale-125 active:scale-[120%]';
+      case "lg":
+        scale = "scale-125 active:scale-[120%]";
         break;
-      case 'sm':
-        scale = 'scale-95 active:scale-[90%]';
+      case "sm":
+        scale = "scale-95 active:scale-[90%]";
         break;
-      case 'xs':
-        scale = 'scale-75 active:scale-[70%]';
+      case "xs":
+        scale = "scale-75 active:scale-[70%]";
         break;
       default:
-        scale = 'scale-95 active:scale-[90%]';
+        scale = "scale-95 active:scale-[90%]";
     }
   }
-
 
   // eslint-disable-next-line
   let foo = [
