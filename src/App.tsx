@@ -1,4 +1,12 @@
-import { Button, Checkbox, UIWraper } from "../components";
+import {
+  Button,
+  Checkbox,
+  Modal,
+  ModalOptions,
+  ModalTitle,
+  ModalTopProps,
+  UIWraper,
+} from "../components";
 
 function App() {
   return (
@@ -94,6 +102,12 @@ function App() {
       </Button>
       <Checkbox checked />
       <Checkbox />
+      <Modal visible id="o">
+        <ModalTopProps>
+          <ModalTitle>ok</ModalTitle>
+          <ModalOptions>x</ModalOptions>
+        </ModalTopProps>
+      </Modal>
     </UIWraper>
   );
 }
