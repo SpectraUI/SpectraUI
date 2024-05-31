@@ -2,9 +2,10 @@ import {
   Button,
   Checkbox,
   Modal,
+  ModalBody,
   ModalOptions,
   ModalTitle,
-  ModalTopProps,
+  ModalTop,
   UIWraper,
 } from "../components";
 
@@ -103,10 +104,11 @@ function App() {
       <Checkbox checked />
       <Checkbox />
       <Modal visible id="o">
-        <ModalTopProps>
+        <ModalTop>
           <ModalTitle>ok</ModalTitle>
           <ModalOptions>x</ModalOptions>
-        </ModalTopProps>
+        </ModalTop>
+        <ModalBody>testing is a nice things</ModalBody>
       </Modal>
     </UIWraper>
   );

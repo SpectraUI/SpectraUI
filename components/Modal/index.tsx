@@ -22,7 +22,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
   return (
     <dialog
       id={String(props.id)}
-      className={"outline-none shadow rounded-md " + props.className}
+      className={"outline-none shadow rounded-md p-4 " + props.className}
     >
       {props.children}
     </dialog>
@@ -31,10 +31,54 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
 export interface ModalTopProps {
   children: ReactNode;
+  justify?: "start" | "center" | "end" | "between" | "around" | "evenly";
 }
 
-export const ModalTopProps: React.FC<ModalTopProps> = (props) => {
-  return <div className="flex gap-4 items-center">{props.children}</div>;
+export const ModalTop: React.FC<ModalTopProps> = (props) => {
+  switch (props.justify) {
+    case "start":
+      return (
+        <div className="flex justify-start items-center gap-2">
+          {props.children}
+        </div>
+      );
+    case "center":
+      return (
+        <div className="flex justify-center items-center gap-2">
+          {props.children}
+        </div>
+      );
+    case "end":
+      return (
+        <div className="flex justify-end items-center gap-2">
+          {props.children}
+        </div>
+      );
+    case "between":
+      return (
+        <div className="flex justify-between items-center gap-2">
+          {props.children}
+        </div>
+      );
+    case "around":
+      return (
+        <div className="flex justify-around items-center gap-2">
+          {props.children}
+        </div>
+      );
+    case "evenly":
+      return (
+        <div className="flex justify-evenly items-center gap-2">
+          {props.children}
+        </div>
+      );
+    default:
+      return (
+        <div className="flex justify-start items-center gap-2">
+          {props.children}
+        </div>
+      );
+  }
 };
 
 export interface ModalTitleProps {
@@ -60,4 +104,14 @@ export const ModalOptions: React.FC<ModalOptionsProps> = (props) => {
       {props.children}
     </div>
   );
+};
+
+export interface ModalContentProps {
+  children: ReactNode;
+}
+
+export const ModalBody: React.FC<ModalContentProps> = (props) => {
+  const { children } = props;
+
+  return <div className="">{children}</div>;
 };
