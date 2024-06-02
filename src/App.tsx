@@ -7,14 +7,32 @@ import {
   ModalTitle,
   ModalTop,
   UIWraper,
+  Navbar,
+  NavbarHeader,
+  NavbarItem,
+  NavbarOptions,
+  NavbarMenuToggle,
+  NavbarSideBar,
 } from "../components";
 
 function App() {
   return (
     <UIWraper>
+      <Navbar justify="between" bordered>
+        <NavbarHeader>Spectra UI</NavbarHeader>
+        <NavbarOptions className="hidden sm:flex">
+          <NavbarItem>Home</NavbarItem>
+          <NavbarItem>About</NavbarItem>
+          <NavbarItem>Projects</NavbarItem>
+        </NavbarOptions>
+        <NavbarMenuToggle />
+      </Navbar>
+      <NavbarSideBar>ok</NavbarSideBar>
       <Button>Click</Button>
       <Button color="cyan">Cyan</Button>
-      <Button color="yellow">Yellow</Button>
+      <Button color="yellow" className="h-[100vh]">
+        Yellow
+      </Button>
       <Button color="secondary">Purple</Button>
       <Button color="green">Green</Button>
       <Button color="zinc">Gray</Button>
@@ -103,10 +121,12 @@ function App() {
       </Button>
       <Checkbox checked />
       <Checkbox />
-      <Modal visible id="o">
+      <Modal visible={false} id="o">
         <ModalTop>
           <ModalTitle>ok</ModalTitle>
-          <ModalOptions>x</ModalOptions>
+          <ModalOptions>
+            <Button>ok</Button>
+          </ModalOptions>
         </ModalTop>
         <ModalBody>testing is a nice things</ModalBody>
       </Modal>
