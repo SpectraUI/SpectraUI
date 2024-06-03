@@ -101,22 +101,38 @@ export const NavbarMenuToggle: React.FC = () => {
 
 export interface NavbarSideBarProps {
   children: React.ReactNode;
+  className?: string;
 }
 
-export const NavbarSideBar: React.FC<NavbarSideBarProps> = ({ children }) => {
+export const NavbarSideBar: React.FC<NavbarSideBarProps> = ({
+  children,
+  className,
+}) => {
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
-    document.addEventListener("ToggleMenu", () => {
+    const toggleMenuHandler = () => {
       setOpened((prev) => !prev);
-    });
+    };
+
+    document.addEventListener("ToggleMenu", toggleMenuHandler);
 
     return () => {
-      document.removeEventListener("ToggleMenu", () => {
-        setOpened((prev) => !prev);
-      });
+      document.removeEventListener("ToggleMenu", toggleMenuHandler);
     };
   }, []);
 
-  return <div>TODO</div>;
+  return (
+    <div
+      className={
+        `fixed inset-y-0 shadow-white left-0 bg-black bg-opacity-75 backdrop-blur-lg z-50 w-64 shadow-sm transform transition-transform duration-300 ease-in-out ${opened ? "translate-x-0" : "-translate-x-full"} ` +
+        className
+      }
+    >
+      <div className="px-6 py-4">
+        {/* Your sidebar content goes here */}
+        {children}
+      </div>
+    </div>
+  );
 };

@@ -27,7 +27,7 @@ function App() {
         </NavbarOptions>
         <NavbarMenuToggle />
       </Navbar>
-      <NavbarSideBar>ok</NavbarSideBar>
+      <NavbarSideBar></NavbarSideBar>
       <Button>Click</Button>
       <Button color="cyan">Cyan</Button>
       <Button color="yellow" className="h-[100vh]">
