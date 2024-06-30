@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <nav
       className={
-        `md:px-[20vw] z-50 p-5 flex items-center backdrop-blur-lg bg-black bg-opacity-70 justify-${justify} ${sticky && "sticky top-0"} ${bordered && "border-b-2 border-gray-500"} ` +
+        `md:px-[20vw] z-50 p-3 flex items-center backdrop-blur-lg bg-black bg-opacity-70 justify-${justify} ${sticky && "sticky top-0"} ${bordered && "border-b-2 border-gray-500"} ` +
         className
       }
     >
