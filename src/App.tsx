@@ -13,6 +13,7 @@ import {
   NavbarOptions,
   NavbarMenuToggle,
   NavbarSideBar,
+  Divider,
 } from "../components";
 
 function App() {
@@ -37,17 +38,20 @@ function App() {
       <Button color="green">Green</Button>
       <Button color="zinc">Gray</Button>
       <Button color="red">Red</Button>
-      <br />
+      <Divider />
       <Button variant="outline">Click</Button>
       <Button color="cyan" variant="outline">
         Cyan
       </Button>
-      <Button color="yellow" variant="outline">
-        Yellow
-      </Button>
-      <Button color="secondary" variant="outline">
-        Purple
-      </Button>
+      <div className="flex h-[50px] items-center">
+        <Button color="yellow" variant="outline">
+          Yellow
+        </Button>
+        <Divider orientation="vertical" />
+        <Button color="secondary" variant="outline">
+          Purple
+        </Button>
+      </div>
       <Button color="green" variant="outline">
         Green
       </Button>
