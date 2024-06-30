@@ -18,7 +18,7 @@ import {
 function App() {
   return (
     <UIWraper>
-      <Navbar justify="between" bordered>
+      <Navbar justify="between" bordered sticky>
         <NavbarHeader>Spectra UI</NavbarHeader>
         <NavbarOptions className="hidden sm:flex">
           <NavbarItem>Home</NavbarItem>
@@ -27,7 +27,7 @@ function App() {
         </NavbarOptions>
         <NavbarMenuToggle />
       </Navbar>
-      <NavbarSideBar></NavbarSideBar>
+      <NavbarSideBar>ok</NavbarSideBar>
       <Button>Click</Button>
       <Button color="cyan">Cyan</Button>
       <Button color="yellow" className="h-[100vh]">

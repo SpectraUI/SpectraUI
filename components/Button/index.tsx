@@ -2,13 +2,13 @@ import { ButtonHTMLAttributes, FunctionComponent } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?:
-    | "primary"
-    | "secondary"
-    | "green"
-    | "red"
-    | "yellow"
-    | "zinc"
-    | "cyan";
+  | "primary"
+  | "secondary"
+  | "green"
+  | "red"
+  | "yellow"
+  | "zinc"
+  | "cyan";
   variant?: "outline" | "solid" | "flat" | "shadow";
   size?: "lg" | "xl" | "sm" | "xs";
   animated?: boolean;
@@ -17,10 +17,13 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const rendererVariant = (variant: string | undefined, color: string) => {
   switch (variant) {
     case "solid":
-      if (color !== "#71717A") {
-        return `bg-[${color}] text-gray-900`;
+      if (color !== "#3f3f46") {
+        if (color === "#7EE7FC") {
+          return `bg-[${color}] text-gray-700`;
+        }
+        return `bg-[${color}] text-gray-200`;
       }
-      return `bg-[${color}] text-gray-100`;
+      return `bg-[${color}] text-gray-300`;
 
     case "outline":
       return `border-2 border-[${color}] text-[${color}]`;
@@ -29,16 +32,22 @@ const rendererVariant = (variant: string | undefined, color: string) => {
       return `bg-[${color}] bg-opacity-30 text-[${color}]`;
 
     case "shadow":
-      if (color !== "#71717A") {
-        return `bg-[${color}] text-gray-900 shadow-[0_8px_20px_-7px_${color}]`;
+      if (color !== "#3f3f46") {
+        if (color === "#7EE7FC") {
+          return `bg-[${color}] text-gray-700 shadow-lg shadow-[${color}77]`;
+        }
+        return `bg-[${color}] text-gray-200 shadow-[${color}77] shadow-lg`;
       }
-      return `bg-[${color}] text-gray-100 shadow-[0_8px_20px_-7px_${color}]`;
+      return `bg-[${color}] text-gray-300 shadow-[${color}77] shadow-lg`;
 
     default:
-      if (color !== "#71717A") {
-        return `bg-[${color}] text-gray-900`;
+      if (color !== "#3f3f46") {
+        if (color === "#7EE7FC") {
+          return `bg-[${color}] text-gray-700`;
+        }
+        return `bg-[${color}] text-gray-200`;
       }
-      return `bg-[${color}] text-gray-100`;
+      return `bg-[${color}] text-gray-300`;
   }
 };
 
@@ -63,10 +72,10 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
   let HexColor;
   switch (color) {
     case "secondary":
-      HexColor = "#7828C8";
+      HexColor = "#9353d3";
       break;
     case "primary":
-      HexColor = "#3561FA";
+      HexColor = "#006fee"
       break;
     case "red":
       HexColor = "#F31260";
@@ -78,13 +87,13 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
       HexColor = "#17C964";
       break;
     case "zinc":
-      HexColor = "#71717A";
+      HexColor = "#3f3f46";
       break;
     case "cyan":
       HexColor = "#7EE7FC";
       break;
     default:
-      HexColor = "#3561FA";
+      HexColor = "#006fee";
       break;
   }
 
@@ -127,40 +136,40 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
 
   // eslint-disable-next-line
   let foo = [
-    "bg-[#71717A]",
+    "bg-[#3f3f46]",
     "bg-[#7EE7FC]",
-    "bg-[#3561FA]",
-    "bg-[#7828C8]",
+    "bg-[#006fee]",
+    "bg-[#9353d3]",
     "bg-[#F31260]",
     "bg-[#F5A524]",
     "bg-[#17C964]",
 
-    "border-[#71717A]",
+    "border-[#3f3f46]",
     "border-[#7EE7FC]",
-    "border-[#3561FA]",
-    "border-[#7828C8]",
+    "border-[#006fee]",
+    "border-[#9353d3]",
     "border-[#F31260]",
     "border-[#F5A524]",
     "border-[#17C964]",
 
-    "shadow-[0_8px_20px_-7px_#71717A]",
-    "shadow-[0_8px_20px_-7px_#7EE7FC]",
-    "shadow-[0_8px_20px_-7px_#3561FA]",
-    "shadow-[0_8px_20px_-7px_#7828C8]",
-    "shadow-[0_8px_20px_-7px_#F31260]",
-    "shadow-[0_8px_20px_-7px_#F5A524]",
-    "shadow-[0_8px_20px_-7px_#17C964]",
+    "shadow-[#3f3f4677]",
+    "shadow-[#7EE7FC77]",
+    "shadow-[#006fee77]",
+    "shadow-[#9353d377]",
+    "shadow-[#F3126077]",
+    "shadow-[#F5A52477]",
+    "shadow-[#17C96477]",
 
-    "text-[#71717A]",
+    "text-[#3f3f46]",
     "text-[#7EE7FC]",
-    "text-[#3561FA]",
-    "text-[#7828C8]",
+    "text-[#006fee]",
+    "text-[#9353d3]",
     "text-[#F31260]",
     "text-[#F5A524]",
     "text-[#17C964]",
   ];
 
-  const class_ = `px-2 text-sm py-1 m-2 rounded-lg ${animated_ ? "transition-all" : ""} ${className} ${rendererVariant(variant, HexColor)} ${scale}`;
+  const class_ = `inline-flex items-center justify-center whitespace-nowrap rounded-md ro_y px-4 py-2 m-1 ${animated_ ? "transition-all" : ""} ${className} ${rendererVariant(variant, HexColor)} ${scale}`;
 
   return (
     <button className={class_} {...otherProps} disabled={disabled}>

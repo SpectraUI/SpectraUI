@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <nav
       className={
-        `md:px-[20vw] p-5 flex items-center justify-${justify} ${sticky && "sticky"} ${bordered && "border-b-2"} ` +
+        `md:px-[20vw] z-50 p-5 flex items-center backdrop-blur-lg bg-black bg-opacity-70 justify-${justify} ${sticky && "sticky top-0"} ${bordered && "border-b-2 border-gray-500"} ` +
         className
       }
     >
@@ -130,7 +130,6 @@ export const NavbarSideBar: React.FC<NavbarSideBarProps> = ({
       }
     >
       <div className="px-6 py-4">
-        {/* Your sidebar content goes here */}
         {children}
       </div>
     </div>
