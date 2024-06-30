@@ -14,6 +14,7 @@ import {
   NavbarMenuToggle,
   NavbarSideBar,
   Divider,
+  Input,
 } from "../components";
 
 function App() {
@@ -134,6 +135,9 @@ function App() {
         </ModalTop>
         <ModalBody>testing is a nice things</ModalBody>
       </Modal>
+      <div className="m-2 pb-10">
+        <Input />
+      </div>
     </UIWraper>
   );
 }

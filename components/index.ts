@@ -4,3 +4,4 @@ export * from "./Checkbox";
 export * from "./Modal";
 export * from "./Navbar";
 export * from "./Divider";
+export * from "./Input";
