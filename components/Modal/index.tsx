@@ -113,5 +113,5 @@ export interface ModalContentProps {
 export const ModalBody: React.FC<ModalContentProps> = (props) => {
   const { children } = props;
 
-  return <div className="">{children}</div>;
+  return <div className="mt-[20px] m-4">{children}</div>;
 };

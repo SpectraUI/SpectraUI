@@ -121,11 +121,11 @@ function App() {
       </Button>
       <Checkbox checked />
       <Checkbox />
-      <Modal visible={false} id="o">
+      <Modal visible={true} id="o">
         <ModalTop>
           <ModalTitle>ok</ModalTitle>
           <ModalOptions>
-            <Button>ok</Button>
+            <Button onClick={() => { document.getElementById('o').close() }} variant="flat">close modal</Button>
           </ModalOptions>
         </ModalTop>
         <ModalBody>testing is a nice things</ModalBody>
