@@ -136,7 +136,7 @@ function App() {
         <ModalBody>testing is a nice things</ModalBody>
       </Modal>
       <div className="m-2 pb-10">
-        <Input />
+        <Input disabled value="asfasf" />
       </div>
     </UIWraper>
   );
